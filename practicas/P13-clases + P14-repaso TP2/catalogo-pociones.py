@@ -1,0 +1,63 @@
+from pocion import Pocion
+from typing import Dict, List, Set, Tuple, TextIO
+import csv
+
+class CatalogoPociones:
+    def __init__(self, archivo_csv:str):
+        '''
+        Inicializa el catálogo de pociones, cargando las pociones
+        contenidas en el archivo archivo_csv que tienen el nivel de
+        dificultad definido (el resto las ignora).
+        Requiere: archivo_csv es el nombre de un archivo en formato
+                  CSV (valores separados por punto y coma), con cinco columnas:
+                  'Name' (str), 'Known ingredients' (lista de
+                  strings separados por comas), 'Effect' (str),
+                  'Characteristics' (str), 'Difficulty level' (str).
+        '''
+        self.pociones_dificultad:Dict[str, Set[Pocion]] = dict()
+        f:TextIO = open(archivo_csv)
+        for linea in csv.DictReader(f, delimiter=';'):
+            nd:str = linea['Difficulty level']
+            if nd != '':
+                nom:str = linea['Name']
+                ing:List[str] = linea['Known ingredients'].split(',')
+                for i in range(len(ing)):
+                    ing[i] = ing[i].strip()    
+                ef:str = linea['Effect']
+                car:str = linea['Characteristics']
+                p:Pocion = Pocion(nom, ing, ef, car, nd)
+                # .... completar ....
+
+        f.close()
+        
+    def __repr__(self):
+        '''
+        Genera la representación de una catálogo de pociones como string.
+        Requiere: nada.
+        Devuelve: el string que representa al catálogo.
+        '''
+        # .... completar ....
+
+    def listar_por_dificultad(self, dif:str) -> List[Pocion]:
+        '''
+        Requiere: nada
+        Devuelve: una lista de Pociones, donde dif
+        correposnde a una cierta dificultad recibida como argumento que se corresponde
+        con la dificultad de las pociones que se deben guardar en la lista de salida.
+        Por ejemplo, si el método se invoca con el argumento 'Advanced', la lista contendrá
+        pociones de tipo Advance.
+        Además, en la lista las pociones aparecen
+        ordenadas de acuerdo al orden definido en la clase Pocion.
+        '''
+
+        # .... completar ....
+
+    def listar_pociones_con_n_ingredientes(self, n:int) -> List[Tuple[str,Pocion]]:
+        '''
+        Requiere: n > 0
+        Devuelve: una lista de tuplas dónde cada tupla almacena una poción y su dificultad.
+        Las pociones que conforman las tuplas de la listas son aquellas que tienen n ingredientes.
+        '''
+        
+        # .... completar ....
+

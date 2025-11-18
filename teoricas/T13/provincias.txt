@@ -1,0 +1,24 @@
+BA___Buenos Aires
+CF___CABA
+CT___Catamarca
+CC___Chaco
+CH___Chubut
+CD___Cordoba
+CR___Corrientes
+ER___Entre Rios
+FO___Formosa
+JY___Jujuy
+LP___La Pampa
+LR___La Rioja
+MZ___Mendoza
+MN___Misiones
+NQ___Neuquen
+RN___Rio Negro
+SA___Salta
+SJ___San Juan
+SL___San Luis
+SC___Santa Cruz
+SF___Santa Fe
+SE___Santiago del Estero
+TF___Tierra del Fuego
+TM___Tucuman
